@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{9b82c102-4470-484f-a60e-785b64727a10}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\Array.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\CLHCommands.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\CommandLineHandler.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\File.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HArray.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\JSON.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCDatabase.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCPacket.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCSkill.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCSocket.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCSocketTCP.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCSocketUDP.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCSocketWS.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\ServerCoalition.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\CommandLineHandler.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCDatabase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCGlobals.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCSkill.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCSocket.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\ServerCoalition.cpp" />
+  </ItemGroup>
+</Project>
