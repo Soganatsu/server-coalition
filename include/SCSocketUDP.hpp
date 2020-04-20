@@ -1,3 +1,8 @@
+/*
+	Filename: SCSocketUDP.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 
 #include "SCSocket.hpp"

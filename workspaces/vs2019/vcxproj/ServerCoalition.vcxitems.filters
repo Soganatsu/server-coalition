@@ -72,7 +72,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\JSON.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HArray.hpp">
+    <ClInclude Include="C:\Users\Jesse\Documents\Projects\Server Coalition\workspaces\vs2019\vcxproj\..\..\..\include\MixedArray.hpp">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HelperFunctions.hpp">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -94,6 +97,15 @@
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCSkill.cpp">
       <Filter>Source Files\Skills</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\MixedArray.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\JSON.cpp">
+      <Filter>Source Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\HelperFunctions.cpp">
+      <Filter>Source Files\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

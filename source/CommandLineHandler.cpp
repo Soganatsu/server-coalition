@@ -1,3 +1,8 @@
+/*
+	Filename: CommandLineHandler.cpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #include <CommandLineHandler.hpp>
 #include <CLHCommands.hpp>
 

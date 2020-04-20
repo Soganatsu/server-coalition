@@ -1,3 +1,8 @@
+/*
+	Filename: SCSocket.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 
 #include <SCPacket.hpp>

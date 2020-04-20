@@ -18,7 +18,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\CLHCommands.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\CommandLineHandler.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\File.hpp" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HArray.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HelperFunctions.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\MixedArray.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\JSON.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCDatabase.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCPacket.hpp" />
@@ -31,6 +32,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\CommandLineHandler.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\HelperFunctions.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\JSON.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\MixedArray.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCDatabase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCGlobals.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\source\SCSkill.cpp" />

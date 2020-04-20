@@ -1,4 +1,10 @@
+/*
+	Filename: ServerCoalition.cpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #include <ServerCoalition.hpp>
+#include <MixedArray.hpp>
 
 // Program Entry Point
 int main(int argc, char** argv, char** arge) {
@@ -17,6 +23,11 @@ int main(int argc, char** argv, char** arge) {
 		//TODO: Daemonize
 	}
 #endif//_LINUX
+
+	MixedArray test;
+	test.push(123);
+	double e = test.get<double>(size_t(0));
+	int e = test.get<int>(size_t(0));
 
 	// Main Loop
 	while (gRunning) {

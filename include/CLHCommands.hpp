@@ -1,3 +1,8 @@
+/*
+	Filename: CLHCommands.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 #ifndef __COMMAND_LINE_HANDLER_COMMANDS_HPP__
 #define __COMMAND_LINE_HANDLER_COMMANDS_HPP__

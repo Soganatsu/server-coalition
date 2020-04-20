@@ -1,52 +1,97 @@
+/*
+	Filename: MixedArray.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 
 #include <stdio.h>
 #include <stdint.h>
+#include <memory.h>
 
 /*
-	HArray -
-		Heterogenous Array that can store and mix multiple data types.
+	MixedArray -
+		Mixed Array that can store and mix multiple data types.
 */
-class HArray {
+class MixedArray {
 public:
 	// Constructor
-	HArray();
+	MixedArray();
 
 	// Destructor
-	~HArray();
+	~MixedArray();
 
+	// Remove First Element
+	void popFront();
+
+	// Remove Last Element
+	void pop();
+
+	// Add Basic Data Type Data
 	template <typename T>
 	size_t push(const T& v) {
 		//TODO:
-		return 0;
-	}
-	size_t push(void* v, const size_t& bsz) {
-		//TODO:
+
 		return 0;
 	}
 
+	// Push an Object
+	size_t push(void* v, const size_t& bsz) {
+		//todo:
+		return 0;
+	}
+
+	// Push Single Dimension Array
 	template <typename T>
 	size_t push(const T* v, const size_t& length) {
 		//TODO:
 		return 0;
 	}
 
+	// Push Multi-Dimensional Array
+	// 
+	template <typename T>
+	size_t push(
+		const T** v,
+		const size_t* lengths,
+		const size_t& count,
+		const size_t& esz)
+	{
+		//TODO:
+		T** buff = new T*[count];
+		size_t* lens = new size_t[count];
+		for (size_t i = 0; i < count; ++i) {
+			lens[i] = lengths[i];
+		}
+
+		return size_t();
+	}
+
 	// Get Basic Data Type
 	template <typename T>
-	const T& get(const size_t& index) {
+	const T& get(const size_t& index) const {
+		return static_cast<T>(m_bytes[m_offsets[index]]);
 	}
 
 	// Get Object Data
 	template <typename T>
-	T* get(const size_t& index) {
+	size_t get(const size_t& index, T** ppDest) {
+		size_t bsz = 0;
 
+		return bsz;
 	}
 
 	// Get Array
 	template <typename T>
-	bool get(const size_t& index, T** ppDest, size_t* pLength) {
+	bool get(
+		const size_t& index,
+		T** ppDest,
+		size_t* pLength)
+	{
 		size_t len = 0;
+		
 		//TODO: Get data
+
 		*ppDest = nullptr;
 		*pLength = len;
 		return true;
@@ -54,27 +99,58 @@ public:
 
 	// Get Multi-Dimensional Array
 	template <typename T>
-	bool get(const size_t& index, T*** pppDest, size_t** ppLengths, size_t* pCount) {
-		if(index >= m_)
-		size_t cnt = m_cnts[index];
-		T** ppArr = new T*[cnt];
-		for (size_t i = 0; i < cnt; ++i) {
-			T* buff = new T[1];
-			ppArr[i] = buff;
+	bool get(
+		const size_t& index,
+		T*** pppDest,
+		size_t** ppLengths,
+		size_t* pCount)
+	{
+		if (index >= m_len) return false;
+
+		// Variables
+		size_t offset = m_offsets[index];
+		size_t count = m_counts[index];
+		size_t* lengths = new size_t[count];
+		T** data = new T*[count];
+
+		// Copy Lengths
+		memcpy(lengths, m_lengths[index], count * sizeof(size_t));
+
+		// Extract Data
+		for (size_t i = 0; i < count; ++i) {
+			size_t sz = (lengths[index][i] * sizeof(lengths[index][i]));
+			T* buff = new T[lengths[index][i]];
+			memcpy(m_bytes[offset], buff[i], sz);
+			data[i] = buff;
+			offset += sz;
 			buff = nullptr;
 		}
-		//TODO: Get data
-		*pppDest = ppArr;
-		ppArr = nullptr;
+
+		// Set Destination Variables
+		*pppDest = data;
+		*ppLengths = lengths;
+		*pCount = count;
+
+		// Reset for security
+		data = nullptr;
+		lengths = nullptr;
+		count = 0;
+
+		// Success
 		return true;
 	}
 
 private:
+	size_t AddData(void* data, const size_t& bsz);
+
+private:
 	size_t						m_len;
 	size_t						m_bsz;
-	size_t*						m_locs;
-	size_t*						m_cnts;
-	uint8_t**					m_bytes;
+	size_t*						m_offsets;
+	size_t*						m_counts;
+	//size_t*						m_types;
+	size_t**					m_lengths;
+	uint8_t*					m_bytes;
 
 };
 

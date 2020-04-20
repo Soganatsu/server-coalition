@@ -1,3 +1,8 @@
+/*
+	Filename: CommandLineHandler.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 
 #if defined(__M_X64__) || defined(__amd64__) || defined(_WIN64)

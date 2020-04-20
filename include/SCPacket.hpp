@@ -1,3 +1,8 @@
+/*
+	Filename: SCPacket.hpp
+	Author: Jesse Stojan
+	Copyright (c) 2020 - All Rights Reserved
+*/
 #pragma once
 //================================================================
 #if defined(_WIN32) || defined(_WIN64)
