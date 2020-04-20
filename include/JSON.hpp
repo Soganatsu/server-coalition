@@ -6,10 +6,11 @@
 #pragma once
 
 #include "MixedArray.hpp"
-
-#include <stdio.h>
 #include <string>
-#include <sstream>
+
+#define JSON_STRINGIFY_UGLIFY 0x1
+#define JSON_STRINGIFY_BEAUTIFY	0x2
+#define JSON_STRINGIFY_DEFAULT JSON_STRINGIFY_UGLIFY
 
 class JSON {
 public:
@@ -20,17 +21,17 @@ public:
 	~JSON();
 
 	// Convert added data into JSON string
-	size_t stringify();
+	size_t stringify(const uint32_t& flags = JSON_STRINGIFY_DEFAULT);
 
 	// Convert added data into JSON string
 	// and place into a destination variable
 	// ANSI
-	size_t stringify(char** ppDest);
+	size_t stringify(char** ppDest, const uint32_t& flags = JSON_STRINGIFY_DEFAULT);
 
 	// Convert added data into JSON string
 	// and place into a destination variable
 	// UNICODE
-	size_t stringify(wchar_t** ppDest);
+	size_t stringify(wchar_t** ppDest, const uint32_t& flags = JSON_STRINGIFY_DEFAULT);
 
 	// Parse JSON Raw Text (ANSI)
 	size_t parse(const char* str);

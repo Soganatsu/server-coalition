@@ -19,6 +19,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\CommandLineHandler.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\File.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HelperFunctions.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\HTML.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\MixedArray.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\JSON.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\include\SCDatabase.hpp" />
